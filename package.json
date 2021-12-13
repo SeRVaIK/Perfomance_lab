@@ -1,0 +1,28 @@
+{
+  "name": "perfomance_lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o build/css src/scss",
+    "watch:css": "node-sass --watch src/scss -o build/css ",
+    "serve": "browser-sync start --server --files 'build/css/*.css, **/*.html'",
+    "start": "run-p serve watch:css"
+  }
+,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeRVaIK/Perfomance_lab.git"
+  },
+  "author": "Sergeytouch index.html",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeRVaIK/Perfomance_lab/issues"
+  },
+  "homepage": "https://github.com/SeRVaIK/Perfomance_lab#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "node-sass": "^7.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
