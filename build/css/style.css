@@ -37,9 +37,14 @@ body {
   font-size: 20px;
   height: 100%; }
 
-/* ============================================================================= */
+/* =========VARIABLES========= */
+/* ===SIDEBAR=== */
+/* ===MAIN===*/
+/* ====== */
+/* ==================================SIDEBAR================================== */
 .wrapper {
   display: flex;
+  max-height: 1098px;
   height: 100%; }
 
 .sidebar {
@@ -49,10 +54,15 @@ body {
   background-color: #111827;
   color: #D1D5DB;
   width: 280px;
-  max-height: 1098px;
+  height: 100%; }
+
+.sidebar__list,
+.sidebar__footer {
   padding: 24px 16px; }
 
 .sidebar__item {
+  display: flex;
+  align-items: center;
   padding: 8px 13px;
   margin-bottom: 4px; }
   .sidebar__item svg {
@@ -63,4 +73,74 @@ body {
     line-height: 171%;
     color: #D1D5DB; }
 
-/* ============================================================================= */
+.sidebar__footer {
+  min-height: 154px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-top: 1px solid #1F2937; }
+
+.sidebar__footer-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 175%; }
+
+.sidebar__footer-link {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 157%;
+  color: #9CA3AF;
+  margin-bottom: 16px; }
+
+.sidebar__footer-btn {
+  background-color: #10B981;
+  border-radius: 8px; }
+  .sidebar__footer-btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 171%;
+    padding: 8px 8px; }
+    .sidebar__footer-btn a span {
+      margin-right: 8px; }
+
+@media screen and (max-width: 1280px) {
+  .sidebar {
+    max-width: 76px; }
+  .sidebar__item span {
+    display: none; }
+  .sidebar__footer .sidebar__footer-text,
+  .sidebar__footer .sidebar__footer-link {
+    display: none; }
+  .sidebar__footer .sidebar__footer-btn span {
+    display: none; } }
+
+/* ==================================MAIN================================== */
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: #F9FAFC; }
+
+/* ==================================MAIN-HEADER================================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 24px;
+  box-shadow: 0px 2px 4px rgba(31, 41, 55, 0.06), 0px 4px 6px rgba(100, 116, 139, 0.12);
+  background-color: #FFFFFF; }
+
+.social {
+  display: flex;
+  align-items: center; }
+
+.social__icon {
+  margin-right: 25px; }
+
+.header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; }

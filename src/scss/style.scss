@@ -3,28 +3,28 @@
 *,
 *::before,
 *::after {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
 }
 
 :focus-visible {
-  outline: none;
+    outline: none;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 ul,
 ol,
 li {
-  list-style: none;
+    list-style: none;
 }
 
 img {
-  vertical-align: top;
+    vertical-align: top;
 }
 
 h1,
@@ -33,77 +33,180 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: inherit;
-  font-size: inherit;
+    font-weight: inherit;
+    font-size: inherit;
 }
 
 html,
 body {
-  font-family: Inter;
-  font-size: 20px;
-  height: 100%;
+    font-family: Inter;
+    font-size: 20px;
+    height: 100%;
 }
 
-$sidebar_bcgr_color:    #111827;
-$sidebar_font_color:    #D1D5DB;
-$sidebar_active_color:  #10B981;
+
+/* =========VARIABLES========= */
+
+
+/* ===SIDEBAR=== */
+
+$sidebar_bcgr_color: #111827;
+$sidebar_font_color: #D1D5DB;
+$sidebar_active_color: #10B981;
 $sidebar_active_bcgr: rgba(255, 255, 255, 0.08);
+$sidebar_border: #1F2937;
+$sidebar_link: #9CA3AF;
+$sidebar_btn_color: #FFFFFF;
 
+/* ===MAIN===*/
 
+$main_bcgr: #F9FAFC;
+$main_items_color: #FFFFFF;
 
-/* ============================================================================= */
+/* ====== */
+
+$header_shadow: 0px 2px 4px rgba(31, 41, 55, 0.06),
+0px 4px 6px rgba(100, 116, 139, 0.12);
+
+/* ==================================SIDEBAR================================== */
 
 .wrapper {
-  display: flex;
-  height: 100%;
+    display: flex;
+    max-height: 1098px;
+    height: 100%;
 }
+
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: $sidebar_bcgr_color;
-  color: $sidebar_font_color;
-  width: 280px;
-  max-height: 1098px;
-  padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $sidebar_bcgr_color;
+    color: $sidebar_font_color;
+    width: 280px;
+    height: 100%;
 }
 
-.sidebar__list {
+.sidebar__wrapper {}
 
-}
-
-.sidebar__wrapper {
+.sidebar__list,
+.sidebar__footer {
+    padding: 24px 16px;
 }
 
 .sidebar__item {
-  padding: 8px 13px;
-  margin-bottom: 4px;
-
-  & svg {
-    margin-right: 10px;
-  }
-
-  & a {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 171%;
-    color: $sidebar_font_color;
-  }
+    display: flex;
+    align-items: center;
+    padding: 8px 13px;
+    margin-bottom: 4px;
+    & svg {
+        margin-right: 10px;
+    }
+    & a {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 171%;
+        color: $sidebar_font_color;
+    }
 }
 
 .sidebar__footer {
+    min-height: 154px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-top: 1px solid $sidebar_border;
 }
 
-.sidebar__footer-title {
+.sidebar__footer-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 175%;
 }
 
-.sidebar__footer-subtitle {
+.sidebar__footer-link {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 157%;
+    color: $sidebar_link;
+    margin-bottom: 16px;
 }
 
 .sidebar__footer-btn {
+    background-color: $sidebar_active_color;
+    border-radius: 8px;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $sidebar_btn_color;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 171%;
+        padding: 8px 8px;
+        span {
+            margin-right: 8px;
+        }
+    }
 }
 
-/* ============================================================================= */
+@media screen and (max-width:1280px) {
+    .sidebar {
+        max-width: 76px;
+    }
+    .sidebar__item {
+        span {
+            display: none;
+        }
+    }
+    .sidebar__footer {
+        .sidebar__footer-text,
+        .sidebar__footer-link {
+            display: none;
+        }
+        .sidebar__footer-btn {
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/* ==================================MAIN================================== */
 
 .main {
+    width: 100%;
+    height: 100%;
+    background-color: $main_bcgr;
+}
+
+
+/* ==================================MAIN-HEADER================================== */
+
+.main__header {}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 12px 24px;
+    box-shadow: $header_shadow;
+    background-color: $main_items_color;
+}
+
+.header__social {}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.social__icon {
+    margin-right: 25px;
+}
+
+.header__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
